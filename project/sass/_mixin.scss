@@ -1,0 +1,42 @@
+@mixin button-size ($padding-y, $padding-x, $font-size, $line-height, $border-radius){
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  line-height: $line-height;
+  @include border-radius($border-radius);
+}
+
+@mixin border-radius($radius:$border-radius){
+  @if $enable-rounded{
+    border-radius:$radius;
+  }
+}
+
+@mixin transition($transition...){
+  @if $enable-transitions{
+    @if length($transition) == 0{
+      transition: $transition-base;
+    }@else{
+      transition: $transition;
+    }
+  }
+}
+
+@mixin box-shadow($shadow...) {
+  @if $enable-shadows {
+    box-shadow: $shadow;
+  }
+}
+
+@mixin hover-focus{
+  &:hover{
+    @content;
+  }
+}
+
+@mixin clearfix(){
+  &::after{
+    display: block;
+    clear:both;
+    content: "";
+  }
+}

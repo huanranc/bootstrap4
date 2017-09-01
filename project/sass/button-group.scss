@@ -1,0 +1,69 @@
+.btn {
+  display: inline-block;
+  //padding: $btn-padding-y $btn-padding-x;
+  //border:0 none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  border:$input-btn-border-width solid transparent;
+  color: #fff;
+ // font-size:1.25rem;
+//  border-radius: 5px;
+  user-select: none;  //not allow the user to select text,eg a label
+  @include button-size($padding-y, $padding-x, $font-size, $line-height, $border-radius);
+  @include transition($btn-transition);
+
+  &:focus{
+    outline: 0;
+    box-shadow: $btn-focus-box-shadow;
+  }
+
+  &:disabled {
+    opacity: .65;
+    @include box-shadow(none);
+  }
+
+  @include hover-focus {
+    text-decoration: none;
+  }
+
+  &.active,
+  &:active {
+    background-image: none;
+     @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+  }
+
+  a.btn.disabled{
+      pointer-events: none;
+  }
+
+}
+
+.btn-primary{
+  background-color: blue;
+  @include hover-focus {
+    background-color: #0069d9;
+    border-color: #0062cc;
+  }
+}
+
+.btn-danger{
+  background-color: red;
+}
+
+.btn-group{
+  display: inline-flex;
+
+   > .btn {
+    position: relative;
+    flex: 0 1 auto;
+
+    // Bring the hover, focused, and "active" buttons to the front to overlay
+    // the borders properly
+    &:focus,
+    &:active,
+    &.active {
+      z-index: 2;
+    }
+  }
+}
