@@ -5,6 +5,7 @@
   white-space: nowrap;
   border: 1px solid transparent;
   color: #fff;
+  text-decoration: none;
   user-select: none;
   padding: 0.75rem 0.75rem;
   font-size: 1rem;
@@ -41,3 +42,117 @@
     flex: 0 1 auto; }
     .btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active {
       z-index: 2; }
+
+.card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background-clip: border-box;
+  border: 1px solid red;
+  border-radius: 0.25rem; }
+  .card .card-img-top {
+    width: 100%; }
+  .card .card-title {
+    margin-bottom: 0; }
+  .card .card-text {
+    flex-direction: column; }
+  .card .card-body {
+    padding: 1rem; }
+  .card .list-group {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px splid red; }
+    .card .list-group .list-group-item {
+      padding: 0.75rem; }
+      .card .list-group .list-group-item + .list-group-item {
+        border-top: 1px solid red; }
+
+/*
+.breadcrumb{
+  list-style: none;
+  li{
+    float: left;
+  }
+  a{
+    float: left;
+    text-decoration: none;
+    padding: 0 0.75rem;
+    &:hover{
+        text-decoration: underline;
+      }
+  }
+  li:not(:last-child)::after{
+    content: "/";
+  }
+  .active{
+    a{
+      color:gray;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.breadcrumb::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+*/
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0.75rem;
+  margin-bottom: 0.75rem;
+  list-style: none;
+  background: ghostwhite; }
+
+.breadcrumb-item + .breadcrumb-item::before {
+  display: inline-block;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  color: green;
+  content: "/"; }
+
+.breadcrumb-item + .breadcrumb-item:hover::before {
+  text-decoration: underline; }
+
+.breadcrumb-item + .breadcrumb-item:hover:before {
+  text-decoration: none; }
+
+.breadcrumb-item.active {
+  color: black; }
+
+.form-group {
+  display: flex;
+  flex-direction: column; }
+
+.form-control {
+  display: block;
+  padding: 0.35rem 1rem;
+  width: 100%; }
+
+.input-group {
+  display: flex;
+  align-items: center;
+  width: 100%; }
+  .input-group .input-group-addon {
+    margin-bottom: 0;
+    background: gray;
+    text-align: center;
+    line-height: 1.5;
+    text-align: center;
+    padding: .25rem;
+    font-size: 1rem;
+    border: 1px solid gray; }
+  .input-group .form-control {
+    margin-bottom: 0;
+    display: block;
+    width: 100%;
+    padding: .25rem;
+    line-height: 1.5;
+    font-size: 1rem;
+    border: 1px solid gray;
+    background-color: #fff; }
